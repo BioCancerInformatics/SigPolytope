@@ -8,7 +8,6 @@ SigPolytope operationalizes a conceptual shift:
 
 This application provides the first interactive implementation of that paradigm.
 
----
 
 ## Scientific motivation
 
@@ -31,7 +30,6 @@ These representations are **reductionist**. They collapse coordinated, cross-lay
 
 As a result, signatures that are biologically distinct often appear equivalent, while signatures that are mechanistically aligned may appear unrelated.
 
----
 
 ## Core concept: signatures have geometry
 
@@ -42,7 +40,6 @@ SigPolytope is based on a rigorous reconceptualization:
 Such entities cannot be faithfully represented as vectors.  
 They must be represented as **geometric objects**.
 
----
 
 ## Geometric framework
 
@@ -61,7 +58,6 @@ All latent dimensions are globally scaled and embedded into a **shared coordinat
 
 For visualization, the latent space is projected into three dimensions while preserving geometric relationships.
 
----
 
 ### From points to polytopes
 
@@ -77,7 +73,6 @@ The result is a **convex polytope**.
 
 > The polytope is not a visualization artifact — **it is the signature**, expressed as a measurable geometric object.
 
----
 
 ## Regulatory circuitries as dual polytopes
 
@@ -97,7 +92,6 @@ This dual representation preserves:
 - balance versus asymmetry  
 - shared versus divergent phenotypic axes  
 
----
 
 ## Intrinsic geometric descriptors
 
@@ -114,7 +108,6 @@ From the dual-polytope construction, SigPolytope derives **intrinsic, interpreta
 
 Together, these define **geometric phenotypes** that cannot be inferred from gene overlap, networks, or scalar statistics.
 
----
 
 ## What SigPolytope enables
 
@@ -130,7 +123,6 @@ SigPolytope allows users to:
 
 Geometry becomes an **analytic and interpretive foundation**, not a cosmetic layer.
 
----
 
 ## 3D polytope visualization
 
