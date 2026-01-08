@@ -118,10 +118,8 @@ To ensure interpretability and terminological consistency, SigPolytope adopts a 
 SigPolytope focuses on **metabolic regulatory circuitries**, defined as paired entities composed of:
 
 - **Regulatory signature (sig)**  
-  Upstream regulators (e.g., TFs, miRNAs, lncRNAs, CNVs, methylation)
 
 - **Interaction signature (int)**  
-  Downstream metabolic or functional programs
 
 Each circuitry is therefore represented as **two convex polytopes embedded in the same latent space**.
 
