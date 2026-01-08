@@ -14,7 +14,7 @@ SigPolytope operationalizes a central conceptual shift:
 
 ---
 
-## Figure 1 — Nomenclature and regulatory circuitry concept
+## Nomenclature and regulatory circuitry concept
 
 <!-- INSERT FIGURE 1 HERE (manuscript Figure 1) -->
 <!-- Suggested repo path (recommended): docs/assets/Figure1.png -->
@@ -91,7 +91,7 @@ The result is a **convex polytope**.
 
 ---
 
-## Figure 2 — Conceptual geometric representations (simulated data)
+## Conceptual geometric representations
 
 <!-- INSERT FIGURE 2 HERE (manuscript Figure 2; composite 2x3 panels) -->
 <!-- Suggested repo path (recommended): docs/assets/Figure2_Composite_2x3.png -->
