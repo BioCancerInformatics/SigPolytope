@@ -1,13 +1,26 @@
 # SigPolytope  
 ### Geometric Multidimensional Representation of Multi-Omic Signatures
 
-**SigPolytope** is a Shiny application developed within the **OncoMetabolismGPS – Geometry** framework for the **geometric representation, exploration, and interpretation of multi-omic regulatory signatures**.
+**SigPolytope** is a geometric framework for the **representation, exploration, and interpretation of multi-omic signatures as structured multidimensional entities**.
 
-SigPolytope operationalizes a conceptual shift:  
+This repository hosts:
+
+- 📦 the **R package (`SigPolytope`)** implementing the geometric formalism
+- 🧭 the **SigPolytope Shiny application** for interactive exploration and interpretation
+- 📊 reproducible code and assets supporting the manuscript figures and atlas outputs
+
+SigPolytope operationalizes a central conceptual shift:  
 **omic signatures are not vectors, scores, or gene lists — they are structured, multidimensional informational entities whose biological meaning is inherently geometric**.
 
-This application provides the first interactive implementation of that paradigm.
+---
 
+## Figure 1 — Nomenclature and regulatory circuitry concept
+
+<!-- INSERT FIGURE 1 HERE (manuscript Figure 1) -->
+<!-- Suggested repo path (recommended): docs/assets/Figure1.png -->
+![Figure 1 — Nomenclature of multi-omic metabolic signatures and regulatory circuitries](docs/assets/Figure1.png)
+
+---
 
 ## Scientific motivation
 
@@ -30,6 +43,7 @@ These representations are **reductionist**. They collapse coordinated, cross-lay
 
 As a result, signatures that are biologically distinct often appear equivalent, while signatures that are mechanistically aligned may appear unrelated.
 
+---
 
 ## Core concept: signatures have geometry
 
@@ -40,6 +54,7 @@ SigPolytope is based on a rigorous reconceptualization:
 Such entities cannot be faithfully represented as vectors.  
 They must be represented as **geometric objects**.
 
+---
 
 ## Geometric framework
 
@@ -58,7 +73,6 @@ All latent dimensions are globally scaled and embedded into a **shared coordinat
 
 For visualization, the latent space is projected into three dimensions while preserving geometric relationships.
 
-
 ### From points to polytopes
 
 A signature is not represented by a single point.
@@ -73,13 +87,32 @@ The result is a **convex polytope**.
 
 > The polytope is not a visualization artifact — **it is the signature**, expressed as a measurable geometric object.
 
+---
+
+## Figure 2 — Conceptual geometric representations (simulated data)
+
+<!-- INSERT FIGURE 2 HERE (manuscript Figure 2; composite 2x3 panels) -->
+<!-- Suggested repo path (recommended): docs/assets/Figure2_Composite_2x3.png -->
+![Figure 2 — Conceptual geometric representations of omic signature organization (simulated data)](docs/assets/Figure2_Composite_2x3.png)
+
+---
+
+## Controlled vocabulary (Box 1)
+
+To ensure interpretability and terminological consistency, SigPolytope adopts a controlled geometric vocabulary that defines the core constructs used across the manuscript, R package, and Shiny interface.
+
+<!-- INSERT BOX 1 IMAGE HERE (Box explaining terms) -->
+<!-- Suggested repo path (recommended): docs/assets/Box1_SigPolytope.png -->
+![Box 1 — Core geometric terms and definitions used in SigPolytope](docs/assets/Box1_SigPolytope.png)
+
+---
 
 ## Regulatory circuitries as dual polytopes
 
 SigPolytope focuses on **metabolic regulatory circuitries**, defined as paired entities composed of:
 
 - **Regulatory signature (sig)**  
-  Upstream regulators (e.g. TFs, miRNAs, lncRNAs, CNVs)
+  Upstream regulators (e.g., TFs, miRNAs, lncRNAs, CNVs, methylation)
 
 - **Interaction signature (int)**  
   Downstream metabolic or functional programs
@@ -92,6 +125,7 @@ This dual representation preserves:
 - balance versus asymmetry  
 - shared versus divergent phenotypic axes  
 
+---
 
 ## Intrinsic geometric descriptors
 
@@ -108,6 +142,7 @@ From the dual-polytope construction, SigPolytope derives **intrinsic, interpreta
 
 Together, these define **geometric phenotypes** that cannot be inferred from gene overlap, networks, or scalar statistics.
 
+---
 
 ## What SigPolytope enables
 
@@ -123,8 +158,36 @@ SigPolytope allows users to:
 
 Geometry becomes an **analytic and interpretive foundation**, not a cosmetic layer.
 
+---
 
-## 3D polytope visualization
+## Components in this repository
+
+### 📦 R package: `SigPolytope`
+
+The R package provides the analytical core:
+
+- latent tensor construction (18D)
+- polytope generation and convex hull computation
+- geometric descriptors (distance, volume, asymmetry, anisotropy)
+- reproducible figure generation
+
+> Package source lives in: `R/`, `man/`, `NAMESPACE`, `DESCRIPTION`, `inst/`
+
+### 🧭 Shiny application: SigPolytope Atlas
+
+The Shiny app provides interactive exploration and interpretation of the geometric atlas:
+
+- filtering by cancer type, pathway, layers, immune states
+- dual-polytope 3D visualization (Plotly/WebGL)
+- structured summaries linking geometry to biological context
+
+> App source lives in: `shiny/` (or `inst/shiny/`, depending on your chosen structure)
+
+**Live app:** https://sigpolytope.shinyapps.io/geometricatlas/
+
+---
+
+## 3D polytope visualization (HTML)
 
 SigPolytope generates **interactive Plotly/WebGL HTML figures** representing dual polytopes.
 
