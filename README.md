@@ -190,14 +190,3 @@ The Shiny app provides interactive exploration and interpretation of the geometr
 > App source lives in: `shiny/` (or `inst/shiny/`, depending on your chosen structure)
 
 **Live app:** https://sigpolytope.shinyapps.io/geometricatlas/
-
----
-
-## 3D polytope visualization (HTML)
-
-SigPolytope generates **interactive Plotly/WebGL HTML figures** representing dual polytopes.
-
-Because GitHub READMEs cannot embed interactive HTML, previews are provided as static or animated images linking to the full figure:
-
-```md
-[![3D polytope preview](docs/assets/polytope_preview.gif)](https://biocancerinformatics.github.io/SigPolytope/www/polytope_LGG_6708_LGG_5904_dual_hulls_18D.html)
