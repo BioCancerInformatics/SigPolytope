@@ -1,0 +1,12 @@
+﻿# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Dados temporários
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.pyc

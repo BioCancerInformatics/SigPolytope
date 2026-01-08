@@ -1,0 +1,37 @@
+Package: SigPolytope 
+Title: Geometric Analysis of Circuitry Signatures
+Version: 0.0.0.9000
+Authors@R: 
+    person("Rodrigues de Souza", "Emanuell", email = "souza.ers00@gmail.com", 
+           role = c("aut", "cre")
+           comment = c(ORCID = "0009-0003-2086-3858"))
+Description: Provides tools for building, analyzing and visualizing 
+    geometric representations of biological circuitry signatures and 
+    their regulatory interactions in 3D PCA space. The package enables
+    construction of signature and regulator geometries, computation of
+    convergence metrics, and interactive 3D visualization of circuitry
+    polytopes.
+License: MIT + file LICENSE
+URL: https://github.com/seuusuario/SigPolytope 
+BugReports: https://github.com/seuusuario/SigPolytope/issues
+Depends: R (>= 3.5.0)
+Imports:
+    stats,
+    dplyr (>= 1.0.0),
+    tibble (>= 3.0.0),
+    geometry (>= 0.4.0),
+    parallel,
+    plotly (>= 4.9.0)
+Suggests: 
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    covr,
+    spelling
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+YEAR: 2026
+COPYRIGHT HOLDER: Medina's LAb
