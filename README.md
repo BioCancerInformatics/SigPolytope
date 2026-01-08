@@ -19,7 +19,7 @@ SigPolytope operationalizes a central conceptual shift:
 <!-- INSERT FIGURE 1 HERE (manuscript Figure 1) -->
 <!-- Suggested repo path (recommended): docs/assets/Figure1.png -->
 <p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%201.tif" width="1000">
+  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%201.png" width="1000">
 </p>
 
 ---
@@ -96,7 +96,7 @@ The result is a **convex polytope**.
 <!-- INSERT FIGURE 2 HERE (manuscript Figure 2; composite 2x3 panels) -->
 <!-- Suggested repo path (recommended): docs/assets/Figure2_Composite_2x3.png -->
 <p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%202_Composite_2x3_600dpi.tif" width="1000">
+  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%202_Composite_2x3_600dpi.png" width="1000">
 </p>
 
 ---
@@ -108,7 +108,7 @@ To ensure interpretability and terminological consistency, SigPolytope adopts a 
 <!-- INSERT BOX 1 IMAGE HERE (Box explaining terms) -->
 <!-- Suggested repo path (recommended): docs/assets/Box1_SigPolytope.png -->
 <p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Box1_SigPolytope_600dpi_rectangular_lines.tiff" width="1000">
+  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Box1_SigPolytope_600dpi_rectangular_lines.png" width="1000">
 </p>
 
 ---
