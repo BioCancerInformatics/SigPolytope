@@ -5,9 +5,9 @@
 
 This repository hosts:
 
-- 📦 the **R package (`SigPolytope`)** implementing the geometric formalism
-- 🧭 the **SigPolytope Shiny application** for interactive exploration and interpretation
-- 📊 reproducible code and assets supporting the manuscript figures and atlas outputs
+- 🧭 the **SigPolytope Shiny Atlas** for interactive geometric exploration  
+- 📊 reproducible code and assets supporting the manuscript figures and atlas outputs  
+- 📁 data structures and computational pipelines implementing the geometric formalism  
 
 SigPolytope operationalizes a central conceptual shift:  
 **omic signatures are not vectors, scores, or gene lists — they are structured, multidimensional informational entities whose biological meaning is inherently geometric**.
@@ -75,6 +75,8 @@ All latent dimensions are globally scaled and embedded into a **shared coordinat
 
 For visualization, the latent space is projected into three dimensions while preserving geometric relationships.
 
+---
+
 ### From points to polytopes
 
 A signature is not represented by a single point.
@@ -103,7 +105,7 @@ The result is a **convex polytope**.
 
 ## Controlled vocabulary (Box 1)
 
-To ensure interpretability and terminological consistency, SigPolytope adopts a controlled geometric vocabulary that defines the core constructs used across the manuscript, R package, and Shiny interface.
+To ensure interpretability and terminological consistency, SigPolytope adopts a controlled geometric vocabulary that defines the core constructs used across the manuscript and the Shiny Atlas.
 
 <!-- INSERT BOX 1 IMAGE HERE (Box explaining terms) -->
 <!-- Suggested repo path (recommended): docs/assets/Box1_SigPolytope.png -->
@@ -118,7 +120,6 @@ To ensure interpretability and terminological consistency, SigPolytope adopts a 
 SigPolytope focuses on **metabolic regulatory circuitries**, defined as paired entities composed of:
 
 - **Regulatory signature (sig)**  
-
 - **Interaction signature (int)**  
 
 Each circuitry is therefore represented as **two convex polytopes embedded in the same latent space**.
@@ -136,13 +137,13 @@ This dual representation preserves:
 From the dual-polytope construction, SigPolytope derives **intrinsic, interpretable geometric measures**:
 
 - **Barycenter distance**  
-  Multidimensional regulatory concordance vs. discordance
+  Multidimensional regulatory concordance vs. discordance  
 
 - **Convex hull volume**  
-  Latent dimensional complexity (single-axis vs. multi-axis behavior)
+  Latent dimensional complexity (single-axis vs. multi-axis behavior)  
 
 - **Volume asymmetry ratio**  
-  Balance versus dominance between regulatory and interacting components
+  Balance versus dominance between regulatory and interacting components  
 
 Together, these define **geometric phenotypes** that cannot be inferred from gene overlap, networks, or scalar statistics.
 
@@ -166,25 +167,28 @@ Geometry becomes an **analytic and interpretive foundation**, not a cosmetic lay
 
 ## Components in this repository
 
-### 📦 R package: `SigPolytope`
+### 🧭 SigPolytope Shiny Atlas
 
-The R package provides the analytical core:
+The Shiny application provides interactive access to the geometric atlas:
 
-- latent tensor construction (18D)
-- polytope generation and convex hull computation
-- geometric descriptors (distance, volume, asymmetry, anisotropy)
-- reproducible figure generation
+- filtering by cancer type, pathway, omic layers, immune states  
+- dual-polytope 3D visualization (Plotly/WebGL)  
+- structured summaries linking geometry to biological context  
+- exportable figures and summary tables  
 
-> Package source lives in: `R/`, `man/`, `NAMESPACE`, `DESCRIPTION`, `inst/`
-
-### 🧭 Shiny application: SigPolytope Atlas
-
-The Shiny app provides interactive exploration and interpretation of the geometric atlas:
-
-- filtering by cancer type, pathway, layers, immune states
-- dual-polytope 3D visualization (Plotly/WebGL)
-- structured summaries linking geometry to biological context
-
-> App source lives in: `shiny/` (or `inst/shiny/`, depending on your chosen structure)
+> App source lives in: `SigPolytope Shiny/`
 
 **Live app:** https://sigpolytope.shinyapps.io/geometricatlas/
+
+---
+
+### 📊 Reproducible computational pipelines
+
+This repository also contains:
+
+- latent tensor construction routines (18D)  
+- polytope generation and convex hull computation  
+- geometric descriptors (distance, volume, asymmetry, anisotropy)  
+- code for generating all manuscript and atlas figures  
+
+These pipelines implement the SigPolytope formalism in a transparent, reproducible manner.
