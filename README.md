@@ -12,7 +12,6 @@ This repository hosts:
 SigPolytope operationalizes a central conceptual shift:  
 **omic signatures are not vectors, scores, or gene lists — they are structured, multidimensional informational entities whose biological meaning is inherently geometric**.
 
----
 
 ## Nomenclature and regulatory circuitry concept
 
@@ -22,7 +21,6 @@ SigPolytope operationalizes a central conceptual shift:
   <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%201.png" width="1000">
 </p>
 
----
 
 ## Scientific motivation
 
@@ -45,7 +43,6 @@ These representations are **reductionist**. They collapse coordinated, cross-lay
 
 As a result, signatures that are biologically distinct often appear equivalent, while signatures that are mechanistically aligned may appear unrelated.
 
----
 
 ## Core concept: signatures have geometry
 
@@ -56,7 +53,6 @@ SigPolytope is based on a rigorous reconceptualization:
 Such entities cannot be faithfully represented as vectors.  
 They must be represented as **geometric objects**.
 
----
 
 ## Geometric framework
 
@@ -76,7 +72,6 @@ All latent dimensions are globally scaled and embedded into a **shared coordinat
 **For visualization, the 18D latent space is projected into three dimensions.**  
 Importantly, the geometric representation is **not intrinsically 3D**: each signature is an **18D polytope**, and the Shiny Atlas displays a **3D projection** of this high-dimensional structure for interpretability.
 
----
 
 ### From points to polytopes
 
@@ -93,7 +88,6 @@ The result is a **convex polytope in the 18D latent space**.
 > The polytope is not a visualization artifact — **it is the signature**, expressed as a measurable high-dimensional geometric object.  
 > The interface displays a **3D projection** of this object for exploration.
 
----
 
 ## Conceptual geometric representations
 
@@ -103,7 +97,6 @@ The result is a **convex polytope in the 18D latent space**.
   <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%202_Composite_2x3_600dpi.png" width="1000">
 </p>
 
----
 
 ## Controlled vocabulary (Box 1)
 
@@ -115,7 +108,6 @@ To ensure interpretability and terminological consistency, SigPolytope adopts a 
   <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Box1_SigPolytope_600dpi_rectangular_lines.png" width="1000">
 </p>
 
----
 
 ## Regulatory circuitries as dual polytopes
 
@@ -134,7 +126,6 @@ This dual representation preserves:
 
 For interpretability, the Shiny Atlas renders **paired 3D projections of the two 18D polytopes** in a shared coordinate system.
 
----
 
 ## Intrinsic geometric descriptors
 
@@ -151,7 +142,6 @@ From the dual-polytope construction, SigPolytope derives **intrinsic, interpreta
 
 Together, these define **geometric phenotypes** that cannot be inferred from gene overlap, networks, or scalar statistics.
 
----
 
 ## What SigPolytope enables
 
@@ -167,7 +157,6 @@ SigPolytope allows users to:
 
 Geometry becomes an **analytic and interpretive foundation**, not a cosmetic layer.
 
----
 
 ## Components in this repository
 
@@ -184,7 +173,6 @@ The Shiny application provides interactive access to the geometric atlas:
 
 **Live app:** https://sigpolytope.shinyapps.io/geometricatlas/
 
----
 
 ### 📊 Reproducible computational pipelines
 
