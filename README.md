@@ -73,7 +73,8 @@ Each signature is encoded as an **18-dimensional latent regulatory vector** inte
 
 All latent dimensions are globally scaled and embedded into a **shared coordinate system**, allowing signatures to be compared structurally rather than descriptively.
 
-For visualization, the latent space is projected into three dimensions while preserving geometric relationships.
+**For visualization, the 18D latent space is projected into three dimensions.**  
+Importantly, the geometric representation is **not intrinsically 3D**: each signature is an **18D polytope**, and the Shiny Atlas displays a **3D projection** of this high-dimensional structure for interpretability.
 
 ---
 
@@ -87,9 +88,10 @@ Instead:
 - a local multidimensional neighborhood is generated  
 - the minimal enclosing envelope is computed  
 
-The result is a **convex polytope**.
+The result is a **convex polytope in the 18D latent space**.
 
-> The polytope is not a visualization artifact — **it is the signature**, expressed as a measurable geometric object.
+> The polytope is not a visualization artifact — **it is the signature**, expressed as a measurable high-dimensional geometric object.  
+> The interface displays a **3D projection** of this object for exploration.
 
 ---
 
@@ -122,13 +124,15 @@ SigPolytope focuses on **metabolic regulatory circuitries**, defined as paired e
 - **Regulatory signature (sig)**  
 - **Interaction signature (int)**  
 
-Each circuitry is therefore represented as **two convex polytopes embedded in the same latent space**.
+Each circuitry is therefore represented as **two convex polytopes embedded in the same 18D latent space**.
 
 This dual representation preserves:
 
 - alignment versus opposition  
 - balance versus asymmetry  
 - shared versus divergent phenotypic axes  
+
+For interpretability, the Shiny Atlas renders **paired 3D projections of the two 18D polytopes** in a shared coordinate system.
 
 ---
 
@@ -154,7 +158,7 @@ Together, these define **geometric phenotypes** that cannot be inferred from gen
 SigPolytope allows users to:
 
 - Explore **large atlases of regulatory circuitries** in a unified geometric space  
-- Interactively visualize **paired 3D polytopes** (signature × interaction)  
+- Interactively visualize **paired 3D projections of 18D polytopes** (signature × interaction)  
 - Quantify regulatory concordance, discordance, and asymmetry  
 - Identify low-, intermediate-, and high-complexity multidimensional architectures  
 - Compare signatures based on **structure rather than molecular composition**  
@@ -172,7 +176,7 @@ Geometry becomes an **analytic and interpretive foundation**, not a cosmetic lay
 The Shiny application provides interactive access to the geometric atlas:
 
 - filtering by cancer type, pathway, omic layers, immune states  
-- dual-polytope 3D visualization (Plotly/WebGL)  
+- **dual-polytope 3D projections** of **18D geometric representations** (Plotly/WebGL)  
 - structured summaries linking geometry to biological context  
 - exportable figures and summary tables  
 
