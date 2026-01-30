@@ -4,6 +4,7 @@
 **SigPolytope** is a geometric framework for the **representation, exploration, and interpretation of multi-omic signatures as structured multidimensional entities**.
 
 **Preprint is out on bioRxiv:**
+
 Almeida Cordeiro Nogueira, H. Medina-Acosta, E. 
 Geometric Multidimensional Representation of Omic Signatures. 
 bioRxiv 2026.01.26.701791; doi: https://doi.org/10.64898/2026.01.26.701791
