@@ -12,224 +12,190 @@ This repository hosts:
 SigPolytope operationalizes a central conceptual shift:  
 **omic signatures are not vectors, scores, or gene lists — they are structured, multidimensional informational entities whose biological meaning is inherently geometric**.
 
+## Conceptual overview of the framework
 
----
+The figure below provides a **schematic overview of the SigPolytope analytical framework**, synthesizing the progression from:
 
-## Visual entry point to the framework
-
-The figure below is the **conceptual gateway** to SigPolytope.  
-It synthesizes the analytical progression established in the manuscript, from:
-
-- multi-omic data integration  
+- multi-omic signatures  
 - regulatory circuitry construction  
-- latent geometric embedding  
-- multidimensional polytope representation  
+- latent-space embedding  
+- convex polytope representation  
+- geometric descriptor extraction  
 
-This image is not included as a decorative element. It is the **entry-level abstraction of the full framework**, and it is also the basis for the redesigned Shiny entrance interface.
-
-<!-- Recommended path for the updated entry-level figure -->
-<!-- Example: SigPolytope Shiny/www/Entry_Interface_Framework.png -->
+This schematic corresponds to the conceptual workflow underlying the framework and complements the formal description provided in the manuscript and supplementary materials.
 
 <p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure_SigPolytope_large_near_A4_300dpi.png" width="1200" alt="SigPolytope conceptual entry figure">
+  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure_SigPolytope_large_near_A4_300dpi.png" width="1200" alt="SigPolytope conceptual framework">
 </p>
-
-> In the Shiny application, this figure functions as the **full-page entrance interface**, from which users transition into the interactive SigPolytope environment.
-
-
----
 
 ## Scientific motivation
 
-### Why vectorial representations fail
+### Limits of vectorial representations
 
-Most biomarker and signature analyses implicitly assume that biological meaning can be captured by:
+Multi-omic signatures are widely used in biomarker discovery, precision oncology, and systems biology. However, they are typically represented as:
 
 - gene lists  
-- weighted scores  
+- composite scores  
 - correlation vectors  
-- network edges  
+- network relationships  
 
-These representations are **reductionist**. They collapse coordinated, cross-layer biological organization into one-dimensional summaries that cannot preserve:
+These representations collapse intrinsically multidimensional biological organization into one-dimensional summaries. As a consequence, they fail to preserve:
 
+- internal structure  
+- directionality across phenotypic axes  
 - regulatory alignment or opposition  
-- phenotypic directionality  
 - latent heterogeneity  
-- multi-axis deformation  
-- concordance versus discordance between interacting programs  
+- multidimensional dependencies across biological layers  
 
-As a result, signatures that are biologically distinct often appear equivalent, while signatures that are mechanistically aligned may appear unrelated.
+As emphasized in the manuscript, this reductionist framing limits both interpretability and comparability of omic signatures :contentReference[oaicite:0]{index=0}.
 
-
----
-
-## Core concept: signatures have geometry
+## Core concept: signatures as structured entities
 
 SigPolytope is based on a rigorous reconceptualization:
 
-> **An omic signature is a multidimensional informational entity whose identity emerges from the coordinated organization of molecular, phenotypic, immune, microenvironmental, and clinical dimensions.**
+> **An omic signature is a multidimensional informational entity whose biological meaning emerges from its internal structural organization across molecular, phenotypic, immune, microenvironmental, and clinical dimensions.**
 
-Such entities cannot be faithfully represented as vectors.  
-They must be represented as **geometric objects**.
+In this formulation:
 
+- signatures are not defined by molecular membership alone  
+- biological meaning arises from **coordinated structure across layers**  
+- similar gene lists may encode distinct regulatory architectures  
+- distinct molecular compositions may converge to similar biological behavior :contentReference[oaicite:1]{index=1}  
 
----
+This motivates a representational framework that preserves structure rather than collapsing it.
 
 ## Geometric framework
 
 ### Latent multidimensional embedding
 
-Each signature is encoded as an **18-dimensional latent regulatory vector** integrating:
+Each signature is embedded into a **shared 18-dimensional latent space** integrating:
 
 - correlation structure  
 - tumor–normal directionality  
 - survival associations (OS, DSS, DFI, PFI)  
-- Cox/log-rank strength and direction  
-- microenvironmental scores  
-- immune context and classification  
+- microenvironmental context  
+- immune classification  
+- statistical strength of associations  
 
-All latent dimensions are globally scaled and embedded into a **shared coordinate system**, allowing signatures to be compared structurally rather than descriptively.
+Latent dimensions are globally scaled, enabling direct comparison across signatures.
 
-**For visualization, the 18D latent space is projected into three dimensions.**  
-Importantly, the geometric representation is **not intrinsically 3D**: each signature is an **18D polytope**, and the Shiny Atlas displays a **3D projection** of this high-dimensional structure for interpretability.
+For visualization purposes, this space is projected into three dimensions.  
+However:
 
+> **the intrinsic representation remains 18-dimensional, and all geometric properties are defined in this full latent space**.
 
-### From points to polytopes
+### From vectors to polytopes
 
-A signature is not represented by a single point.
+Instead of representing signatures as single points:
 
-Instead:
+- each latent coordinate is symmetrically perturbed  
+- a local multidimensional structure is generated  
+- a convex envelope is computed  
 
-- each latent coordinate is perturbed symmetrically  
-- a local multidimensional neighborhood is generated  
-- the minimal enclosing envelope is computed  
+The result is a **convex polytope**, representing the signature as a geometric object.
 
-The result is a **convex polytope in the 18D latent space**.
+> The polytope is not a visualization artifact — it is the mathematical representation of the signature in latent space.
 
-> The polytope is not a visualization artifact — **it is the signature**, expressed as a measurable high-dimensional geometric object.  
-> The interface displays a **3D projection** of this object for exploration.
-
-
----
-
-## Nomenclature and regulatory circuitry concept
-
-The framework formalizes regulatory circuitry as a structured geometric system in which molecular interactions are not merely catalogued, but embedded into a latent multidimensional space.
-
-<p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%201.png" width="1000" alt="SigPolytope nomenclature and regulatory circuitry concept">
-</p>
-
-
----
-
-## Conceptual geometric representations
-
-These panels illustrate how latent multidimensional organization can be translated into interpretable geometric forms.
-
-<p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%202_Composite_2x3_600dpi.png" width="1000" alt="Conceptual geometric representations in SigPolytope">
-</p>
-
-
----
-
-## Controlled vocabulary (Box 1)
-
-To ensure interpretability and terminological consistency, SigPolytope adopts a controlled geometric vocabulary that defines the core constructs used across the manuscript and the Shiny Atlas.
-
-<p align="center">
-  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Box1_SigPolytope_600dpi_rectangular_lines.png" width="1000" alt="Controlled vocabulary for SigPolytope">
-</p>
-
-
----
-
-## Regulatory circuitries as dual polytopes
+## Regulatory circuitries as paired geometric entities
 
 SigPolytope focuses on **metabolic regulatory circuitries**, defined as paired entities composed of:
 
-- **Regulatory signature (sig)**  
-- **Interaction signature (int)**  
+- a **regulatory signature (sig)**  
+- an **interaction signature (int)**  
 
-Each circuitry is therefore represented as **two convex polytopes embedded in the same 18D latent space**.
+Each circuitry is represented as **two polytopes embedded in the same latent space**, preserving:
 
-This dual representation preserves:
-
-- alignment versus opposition  
-- balance versus asymmetry  
+- concordance versus discordance  
+- symmetric versus asymmetric structure  
 - shared versus divergent phenotypic axes  
 
-For interpretability, the Shiny Atlas renders **paired 3D projections of the two 18D polytopes** in a shared coordinate system.
-
-
----
+This dual-polytope representation enables direct geometric comparison of regulatory configurations.
 
 ## Intrinsic geometric descriptors
 
-From the dual-polytope construction, SigPolytope derives **intrinsic, interpretable geometric measures**:
+From this representation, SigPolytope derives intrinsic geometric measurements:
 
 - **Barycenter distance**  
-  Multidimensional regulatory concordance vs. discordance  
+  → multidimensional concordance versus discordance  
 
 - **Convex hull volume**  
-  Latent dimensional complexity (single-axis vs. multi-axis behavior)  
+  → latent dimensional complexity  
 
 - **Volume asymmetry ratio**  
-  Balance versus dominance between regulatory and interacting components  
+  → balance between regulatory and interaction components  
 
-Together, these define **geometric phenotypes** that cannot be inferred from gene overlap, networks, or scalar statistics.
+- **Anisotropy and orientation**  
+  → dominant phenotypic axes  
 
+These descriptors quantify structural properties that are not accessible through vector-based or network-based representations.
 
----
+## Conceptual geometric representations
+
+The following panels illustrate how distinct internal organizations produce distinct geometric forms in latent space.
+
+<p align="center">
+  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Figure%202_Composite_2x3_600dpi.png" width="1000" alt="Conceptual geometric representations">
+</p>
+
+## Controlled vocabulary (Box 1)
+
+To ensure conceptual clarity and interpretability, the framework adopts a controlled geometric vocabulary defining core constructs used across analyses.
+
+<p align="center">
+  <img src="https://github.com/BioCancerInformatics/SigPolytope/blob/main/SigPolytope%20Shiny/www/Box1_SigPolytope_600dpi_rectangular_lines.png" width="1000" alt="Controlled vocabulary">
+</p>
 
 ## What SigPolytope enables
 
-SigPolytope allows users to:
+SigPolytope enables:
 
-- Explore **large atlases of regulatory circuitries** in a unified geometric space  
-- Enter the framework through a **full-page conceptual interface** aligned with the manuscript logic  
-- Interactively visualize **paired 3D projections of 18D polytopes** (signature × interaction)  
-- Quantify regulatory concordance, discordance, and asymmetry  
-- Identify low-, intermediate-, and high-complexity multidimensional architectures  
-- Compare signatures based on **structure rather than molecular composition**  
-- Detect redundancy, divergence, and mechanistic equivalence geometrically  
-- Support principled stratification and prioritization of candidate biomarkers  
+- structural comparison of multi-omic signatures in a shared latent space  
+- identification of concordant and discordant regulatory programs  
+- quantification of latent complexity and multidimensional engagement  
+- detection of redundancy and functional equivalence  
+- principled prioritization of candidate biomarkers  
+- interpretation of regulatory systems beyond molecular overlap  
 
-Geometry becomes an **analytic and interpretive foundation**, not a cosmetic layer.
-
-
----
+Geometry becomes an **analytical and interpretive layer**, complementing—but not replacing—vector-based approaches.
 
 ## Components in this repository
 
 ### 🧭 SigPolytope Shiny Atlas
 
-The Shiny application provides interactive access to the geometric atlas through a staged interface:
-
-- **Level 1**: full-page conceptual entry figure  
-- **Level 3**: interactive SigPolytope exploration environment  
-
-Main features include:
+The Shiny application provides an interactive interface for exploring geometric representations of regulatory circuitries:
 
 - filtering by cancer type, pathway, omic layers, immune states  
-- **dual-polytope 3D projections** of **18D geometric representations** (Plotly/WebGL)  
+- visualization of **paired 3D projections of 18D polytopes**  
 - structured summaries linking geometry to biological context  
 - exportable figures and summary tables  
 
-> App source lives in: `SigPolytope Shiny/`
-
-**Live app:** https://sigpolytope.shinyapps.io/geometricatlas/
-
+> App source: `SigPolytope Shiny/`  
+> Live app: https://sigpolytope.shinyapps.io/geometricatlas/
 
 ### 📊 Reproducible computational pipelines
 
-This repository also contains:
+This repository includes:
 
-- latent tensor construction routines (18D)  
-- polytope generation and convex hull computation  
-- geometric descriptors (distance, volume, asymmetry, anisotropy)  
-- code for generating manuscript and atlas figures  
-- static assets used in the repository and Shiny entry interface  
+- latent vector construction (18D)  
+- convex polytope generation  
+- geometric descriptor computation  
+- benchmarking and validation routines  
+- scripts used to generate manuscript figures  
 
-These pipelines implement the SigPolytope formalism in a transparent, reproducible manner.
+All geometric representations and metrics are **deterministically derived** from the latent tensors, ensuring reproducibility :contentReference[oaicite:2]{index=2}.
+
+## Conceptual scope
+
+This framework is methodological and representational in nature.
+
+It does not replace existing statistical or predictive models, but instead provides:
+
+- a **structural representation of multi-omic signatures**  
+- a **geometric basis for comparison and interpretation**  
+- a **foundation for downstream analytical and translational applications**  
+
+By treating signatures as geometric objects, SigPolytope reframes biological inference as a problem of **multidimensional structural organization** rather than scalar association.
+
+## Citation
+
+If you use SigPolytope, please cite the corresponding manuscript and repository resources.
