@@ -157,4 +157,8 @@ It provides a geometric basis for:
 
 ## Citation
 
-Please cite the corresponding manuscript when available.
+Please cite the corresponding paper:
+
+Almeida Cordeiro Nogueira, H. Medina-Acosta, E. 
+Geometric Multidimensional Representation of Omic Signatures. 
+bioRxiv 2026.01.26.701791; doi: https://doi.org/10.64898/2026.01.26.701791
